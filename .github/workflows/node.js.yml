@@ -25,9 +25,12 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        # cache: 'npm'
+
+    - name: Installing dependency
+      run: npm install
     - name: Linting
       run: npm run lint
+
     - run: npm ci
     - run: npm run build --if-present
-    #- run: npm test
+    - run: npm test
