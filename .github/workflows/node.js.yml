@@ -39,5 +39,5 @@ jobs:
       name: Deploy to Render
       uses: gh-actions-workflows/deploy-docker-render@v1.1
       with:
-        deploy-hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        deploy-hook: ${{ secrets.DEPLOY_HOOK }}
         wait-for-deployment: true
