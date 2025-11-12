@@ -34,3 +34,9 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+
+    - name: Deploy to Render
+      uses: gh-actions-workflows/deploy-docker-render@v1.1
+      with:
+        deploy-hook: ${{ secrets.DEPLOY_HOOK }}
+        wait-for-deployment: true
